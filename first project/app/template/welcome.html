@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport">
+        <title>Welcome</title> 
+        <link rel="stylesheet" href='/static/styles.css'>
+    </head>
+    <body>
+        <section>
+            <article>
+                <form onsubmit="findSelected()" action="/search" class="form" method="POST">
+                <div >
+                    <h1>Welcome</h1>
+                    <h3>Choose the Dataset</h3>
+                </div>
+                <div>
+                   <span>
+                       <input checked type="radio" id="antique" value="antique" name="dataset" required> 
+                       <label for="antique" class="checkbox">Antique Dataset</label>
+                       <br>
+                   </span>
+                   <span>
+                    <input type="radio" id="msmarco-passage" value="msmarco-passage" name="dataset" required> 
+                    <label for="msmarco-passage" class="checkbox" >Msmarco-Passage Dataset</label>
+                  </span>
+                </div>  
+                <div class="submitBtn">
+                    <p id="result" name="result" class="result_p"></p>
+                       <button class="submit">Submit</button>
+                </div>
+            </form>
+            </article>
+        </section>
+    </body>
+    <script>
+        // var checked =false;
+        // function handle_checked(e){
+        //     e.
+        // }
+        let radioBtn = document.querySelectorAll("input[name='dataset']");
+        let result = document.getElementById("result")
+        function findSelected(){
+            let selected = document.querySelector("input[name='dataset']:checked").value;
+            localStorage.setItem("dataset",selected);
+            result.textContent = `choosen Dataset: ${selected}` ;
+            return false
+        }
+        radioBtn.forEach(radioBtn =>{
+            radioBtn.addEventListener("change" ,findSelected);
+        });
+        function run(e){
+           console.log(`${selected}`)
+            e.preventDefault();
+        }
+
+        // findSelected();
+    </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" >
+        <title>Search</title> 
+        <link rel="stylesheet" href='./style2.css'>
+    </head>
+    <body>
+        <div class="box">
+            <h1>Welcome to <span> {{d}} </span>  dataset</h1>
+            <form action="/result" method="POST">
+                <input type="text" name="query" placeholder="Type....">
+                <input type="submit" name="" value="Search">
+                <div class="result_doc">
+                    <p class="doc">noor</p>
+                </div>
+                <!-- <div class="submitBtn">
+                    <p id="result" name="result" class="result_p"></p>
+                       <button class="Search">Submit</button>
+                </div> -->
+            </form>
+        </div>
+    </body>
+    <script>
+        // document.getElementById("selected").innerHTML=localStorage.getItem("dataset");
+        // document.getElementById("query").innerHTML=localStorage.getItem("query_q");
+    </script>
+</html>
